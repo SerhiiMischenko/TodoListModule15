@@ -3,7 +3,7 @@ package com.example.todoList;
 import lombok.Data;
 import org.springframework.stereotype.Component;
 @Data
-@Component("noteBean")
+@Component()
 public class Note {
     private static int idCounter = 0;
     private int id;
