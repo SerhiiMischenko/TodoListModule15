@@ -3,11 +3,14 @@ package com.example.todoList;
 import lombok.Data;
 import org.springframework.stereotype.Service;
 
+import java.util.Arrays;
 import java.util.List;
 @Data
 @Service
 public class NoteService {
-    private List<Note> noteList;
+    private List<Note> noteList = Arrays.asList(new Note("First", "Go to school"),
+            new Note("First", "Go to school"),new Note("First", "Go to school"),
+            new Note("First", "Go to school"),new Note("First", "Go to school"));
 
     public List<Note> listAll() {
         return noteList;
@@ -20,7 +23,7 @@ public class NoteService {
         return note;
     }
 
-    public void deleteById(long id) {
+    public void deleteById(Long id) {
         boolean removed = noteList.removeIf(n -> n.getId() == id);
         if (!removed) {
             throw new IllegalArgumentException("Note with this id does not exist.");

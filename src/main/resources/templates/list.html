@@ -2,9 +2,42 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Current time</title>
+    <title>Notes</title>
 </head>
 <body>
-<h1 th:text=" 'Current time: ' + ${list}"></h1>
+<h1>Notes</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Title</th>
+        <th>Content</th>
+        <th>Actions</th>
+    </tr>
+    </thead>
+    <tbody>
+    <!-- Здесь используется Thymeleaf для итерации по списку заметок -->
+    <tr th:each="note : ${list}">
+        <td th:text="${note.title}"></td>
+        <td th:text="${note.content}"></td>
+        <td>
+            <!-- Добавление кнопок для удаления и редактирования -->
+            <button onclick="editNote(${note.id})">Edit</button>
+            <button onclick="deleteNote(${note.id})">Delete</button>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<script>
+    // JavaScript функции для удаления и редактирования записей
+    function deleteNote(noteId) {
+        // Ваш код для удаления заметки с заданным идентификатором
+    }
+
+    function editNote(noteId) {
+        // Ваш код для редактирования заметки с заданным идентификатором
+    }
+</script>
 </body>
 </html>
