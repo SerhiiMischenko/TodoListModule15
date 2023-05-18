@@ -3,14 +3,15 @@ package com.example.todoList;
 import lombok.Data;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 @Data
 @Service
 public class NoteService {
-    private List<Note> noteList = Arrays.asList(new Note("First", "Go to school"),
-            new Note("First", "Go to school"),new Note("First", "Go to school"),
-            new Note("First", "Go to school"),new Note("First", "Go to school"));
+    private List<Note> noteList = new ArrayList<>(Arrays.asList(new Note("First", "Go to School"),
+            new Note("Second", "Go to Gym"),new Note("Third", "Go to Bar"),
+            new Note("Four", "Go to Drive"),new Note("Five", "Go to bed")));
 
     public List<Note> listAll() {
         return noteList;

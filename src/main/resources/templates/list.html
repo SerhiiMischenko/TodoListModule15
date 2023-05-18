@@ -21,23 +21,26 @@
         <td th:text="${note.title}"></td>
         <td th:text="${note.content}"></td>
         <td>
-            <!-- Добавление кнопок для удаления и редактирования -->
+            <!-- Добавление формы для удаления заметки -->
+            <form th:action="@{/note/delete}" method="post">
+                <input type="hidden" name="id" th:value="${note.id}">
+                <button type="submit">Delete</button>
+            </form>
+
+            <!-- Кнопка для редактирования заметки -->
             <button onclick="editNote(${note.id})">Edit</button>
-            <button onclick="deleteNote(${note.id})">Delete</button>
         </td>
     </tr>
     </tbody>
 </table>
 
 <script>
-    // JavaScript функции для удаления и редактирования записей
-    function deleteNote(noteId) {
-        // Ваш код для удаления заметки с заданным идентификатором
-    }
-
     function editNote(noteId) {
-        // Ваш код для редактирования заметки с заданным идентификатором
+        // Выполните действия для редактирования заметки с указанным идентификатором
+        // Например, перенаправление на страницу редактирования заметки
+        window.location.href = '/note/edit?id=' + noteId;
     }
 </script>
+
 </body>
 </html>
