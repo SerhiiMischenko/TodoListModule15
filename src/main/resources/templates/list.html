@@ -16,18 +16,15 @@
     </tr>
     </thead>
     <tbody>
-    <!-- Здесь используется Thymeleaf для итерации по списку заметок -->
     <tr th:each="note : ${list}">
         <td th:text="${note.title}"></td>
         <td th:text="${note.content}"></td>
         <td>
-            <!-- Добавление формы для удаления заметки -->
             <form th:action="@{/note/delete}" method="post">
                 <input type="hidden" name="id" th:value="${note.id}">
                 <button type="submit">Delete</button>
             </form>
 
-            <!-- Кнопка для редактирования заметки -->
             <button onclick="editNote(${note.id})">Edit</button>
         </td>
     </tr>
@@ -36,8 +33,6 @@
 
 <script>
     function editNote(noteId) {
-        // Выполните действия для редактирования заметки с указанным идентификатором
-        // Например, перенаправление на страницу редактирования заметки
         window.location.href = '/note/edit?id=' + noteId;
     }
 </script>
