@@ -3,11 +3,25 @@
 <head>
     <meta charset="UTF-8">
     <title>Notes</title>
+    <style>
+        .button {
+            background-color: transparent;
+            border: none;
+            color: #4CAF50; /* Цвет текста для кнопок Edit и Delete */
+            padding: 8px 16px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 14px;
+            margin: 4px 2px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 <h1>Notes</h1>
 
-<button onclick="createNote()">Create</button>
+<button onclick="createNote()" class="button">Create</button>
 
 <table>
     <thead>
@@ -24,9 +38,9 @@
         <td>
             <form th:action="@{/note/delete}" method="post">
                 <input type="hidden" name="id" th:value="${note.id}">
-                <button type="submit">Delete</button>
+                <button type="submit" class="button">Delete</button>
             </form>
-            <a th:href="@{/note/edit/{id}(id=${note.id})}">Edit</a>
+            <a th:href="@{/note/edit/{id}(id=${note.id})}" class="button">Edit</a>
         </td>
     </tr>
     </tbody>
