@@ -11,10 +11,10 @@ public class Note {
     private String content;
 
     public Note() {
-        this.id = idCounter++;
     }
 
     public Note(String title, String content) {
+        this.id = idCounter++;
         this.title = title;
         this.content = content;
     }
