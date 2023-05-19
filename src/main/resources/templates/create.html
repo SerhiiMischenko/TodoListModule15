@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
   <meta charset="UTF-8">
   <title>Create Note</title>
 </head>
@@ -10,14 +11,18 @@
 <form th:action="@{/note/create}" method="post">
   <div>
     <label>Title:</label>
-    <input type="text" name="title" required>
+    <label>
+      <input type="text" name="title" required>
+    </label>
   </div>
   <div>
     <label>Content:</label>
-    <textarea name="content" required></textarea>
+    <label>
+      <textarea name="content" required></textarea>
+    </label>
   </div>
   <button type="submit">Create</button>
 </form>
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
