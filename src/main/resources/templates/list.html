@@ -26,17 +26,13 @@
                 <input type="hidden" name="id" th:value="${note.id}">
                 <button type="submit">Delete</button>
             </form>
-            <button onclick="editNote(${note.id})">Edit</button>
+            <a th:href="@{/note/edit/{id}(id=${note.id})}">Edit</a>
         </td>
     </tr>
     </tbody>
 </table>
 
 <script>
-    function editNote(noteId) {
-        window.location.href = '/note/edit?id=' + noteId;
-    }
-
     function createNote() {
         window.location.href = '/note/create';
     }
