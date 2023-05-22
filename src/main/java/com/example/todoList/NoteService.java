@@ -4,6 +4,8 @@ import lombok.Data;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Objects;
+
 @Data
 @Service
 public class NoteService {
@@ -21,18 +23,25 @@ public class NoteService {
         noteRepository.deleteById(id);
     }
 
-    public Note editNote(Note note) {
-        noteRepository.deleteById(note.getId());
-        return getNoteById(note.getId());
+    public Note editNoteById(Note note) {
+        noteRepository.save(getNoteById(note.getId()));
+        return note;
     }
+
+    public void editNote(Note note) {
+        noteRepository.save(note);
+    }
+
+
 
     public Note getNoteById(Long id) {
         List<Note> noteList = noteRepository.findAll();
         for (Note note : noteList) {
-            if (note.getId() == id) {
+            if (Objects.equals(note.getId(), id)) {
                 return note;
             }
         }
         return null;
     }
+
 }

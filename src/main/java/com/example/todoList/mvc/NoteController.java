@@ -43,14 +43,19 @@ public class NoteController {
 
     @GetMapping("/edit/{id}")
     public String editNoteForm(@PathVariable("id") Long id, Model model) {
-        Note note = noteService.editNote(noteService.getNoteById(id));
+        System.out.println("in Edit() @GetMapping");
+        System.out.println(noteService.getNoteById(id).getId());
+        Note note = noteService.editNoteById(noteService.getNoteById(id));
         model.addAttribute("note", note);
         return "edit";
     }
 
     @PostMapping("/edit")
     public String editNoteSubmit(@ModelAttribute("note") Note note) {
+        System.out.println("in Edit() @PostMapping");
+        System.out.println(note);
         noteService.editNote(note);
+        System.out.println(note);
         return "redirect:/note/list";
     }
 }
