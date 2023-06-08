@@ -1,7 +1,7 @@
 package com.example.todoList.mvc;
 
-import com.example.todoList.Note;
-import com.example.todoList.NoteService;
+import com.example.todoList.entity.Note;
+import com.example.todoList.entity.NoteService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;

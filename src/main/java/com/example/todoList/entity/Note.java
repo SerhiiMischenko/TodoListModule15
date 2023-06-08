@@ -1,4 +1,4 @@
-package com.example.todoList;
+package com.example.todoList.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;

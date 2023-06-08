@@ -1,5 +1,6 @@
-package com.example.todoList;
+package com.example.todoList.entity;
 
+import com.example.todoList.data.NoteRepository;
 import lombok.Data;
 import org.springframework.stereotype.Service;
 
